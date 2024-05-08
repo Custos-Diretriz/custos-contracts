@@ -1,0 +1,28 @@
+type AgreementCreated @entity(immutable: true) {
+  id: Bytes!
+  agreementId: BigInt! # uint256
+  creator: Bytes! # address
+  content: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AgreementSigned @entity(immutable: true) {
+  id: Bytes!
+  agreementId: BigInt! # uint256
+  signer: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AgreementValid @entity(immutable: true) {
+  id: Bytes!
+  agreementId: BigInt! # uint256
+  firstpartyid: String! # string
+  secondpartyid: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Agreement
+    network: base-sepolia
+    source:
+      address: "0x726c51fcAC027fF7C9eAaF830f88daF12199ddC5"
+      abi: Agreement
+      startBlock: 9708454
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AgreementCreated
+        - AgreementSigned
+        - AgreementValid
+      abis:
+        - name: Agreement
+          file: ./abis/Agreement.json
+      eventHandlers:
+        - event: AgreementCreated(uint256,address,string)
+          handler: handleAgreementCreated
+        - event: AgreementSigned(uint256,address)
+          handler: handleAgreementSigned
+        - event: AgreementValid(uint256,string,string)
+          handler: handleAgreementValid
+      file: ./src/agreement.ts
