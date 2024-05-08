@@ -1,0 +1,8 @@
+{
+  "base-sepolia": {
+    "CrimeRecords": {
+      "address": "0xd9Da513797FD0E72105727CDFFBae75F6b7Dc2F0",
+      "startBlock": 9701576
+    }
+  }
+}
