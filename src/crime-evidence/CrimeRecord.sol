@@ -11,6 +11,8 @@ contract CrimeRecord is ERC721, ERC721URIStorage, Ownable, ERC721Pausable, ERC27
     uint256 private _nextTokenId;
     address trustedForwarder;
 
+    event Mint(address user, string uri);
+
     constructor(address initialOwner, address _trustedForwarder)
         ERC721("CrimeRecords", "CRD")
         Ownable(initialOwner)
@@ -20,6 +22,7 @@ contract CrimeRecord is ERC721, ERC721URIStorage, Ownable, ERC721Pausable, ERC27
         uint256 tokenId = _nextTokenId++;
         _safeMint(_msgSender(), tokenId);
         _setTokenURI(tokenId, uri);
+        emit Mint(_msgSender(), uri);
     }
 
     function setTrustedForwarder(address _forwarder) external onlyOwner() {

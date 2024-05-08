@@ -8,9 +8,9 @@ dataSources:
     name: CrimeRecords
     network: base-sepolia
     source:
-      address: "0x9422c9a57d1a353b909d5340738b13104225e547"
+      address: "0xd9Da513797FD0E72105727CDFFBae75F6b7Dc2F0"
       abi: CrimeRecords
-      startBlock: 9673250
+      startBlock: 9701576
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -20,6 +20,7 @@ dataSources:
         - ApprovalForAll
         - BatchMetadataUpdate
         - MetadataUpdate
+        - Mint
         - OwnershipTransferred
         - Paused
         - Transfer
@@ -36,6 +37,8 @@ dataSources:
           handler: handleBatchMetadataUpdate
         - event: MetadataUpdate(uint256)
           handler: handleMetadataUpdate
+        - event: Mint(address,string)
+          handler: handleMint
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
         - event: Paused(address)

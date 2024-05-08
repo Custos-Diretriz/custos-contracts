@@ -5,6 +5,7 @@ import {
   ApprovalForAll,
   BatchMetadataUpdate,
   MetadataUpdate,
+  Mint,
   OwnershipTransferred,
   Paused,
   Transfer,
@@ -95,6 +96,21 @@ export function createMetadataUpdateEvent(_tokenId: BigInt): MetadataUpdate {
   )
 
   return metadataUpdateEvent
+}
+
+export function createMintEvent(user: Address, uri: string): Mint {
+  let mintEvent = changetype<Mint>(newMockEvent())
+
+  mintEvent.parameters = new Array()
+
+  mintEvent.parameters.push(
+    new ethereum.EventParam("user", ethereum.Value.fromAddress(user))
+  )
+  mintEvent.parameters.push(
+    new ethereum.EventParam("uri", ethereum.Value.fromString(uri))
+  )
+
+  return mintEvent
 }
 
 export function createOwnershipTransferredEvent(

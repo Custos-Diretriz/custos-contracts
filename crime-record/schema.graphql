@@ -35,6 +35,15 @@ type MetadataUpdate @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
+type Mint @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  uri: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
 type OwnershipTransferred @entity(immutable: true) {
   id: Bytes!
   previousOwner: Bytes! # address

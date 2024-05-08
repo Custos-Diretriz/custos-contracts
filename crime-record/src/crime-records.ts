@@ -3,6 +3,7 @@ import {
   ApprovalForAll as ApprovalForAllEvent,
   BatchMetadataUpdate as BatchMetadataUpdateEvent,
   MetadataUpdate as MetadataUpdateEvent,
+  Mint as MintEvent,
   OwnershipTransferred as OwnershipTransferredEvent,
   Paused as PausedEvent,
   Transfer as TransferEvent,
@@ -13,6 +14,7 @@ import {
   ApprovalForAll,
   BatchMetadataUpdate,
   MetadataUpdate,
+  Mint,
   OwnershipTransferred,
   Paused,
   Transfer,
@@ -70,6 +72,20 @@ export function handleMetadataUpdate(event: MetadataUpdateEvent): void {
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
   entity._tokenId = event.params._tokenId
+
+  entity.blockNumber = event.block.number
+  entity.blockTimestamp = event.block.timestamp
+  entity.transactionHash = event.transaction.hash
+
+  entity.save()
+}
+
+export function handleMint(event: MintEvent): void {
+  let entity = new Mint(
+    event.transaction.hash.concatI32(event.logIndex.toI32())
+  )
+  entity.user = event.params.user
+  entity.uri = event.params.uri
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
