@@ -1,7 +1,7 @@
 # Crime Records Smart Contract Documentation
 
 ## Overview
-The Crime Records smart contract is a decentralized application built on the Ethereum blockchain, designed to manage crime records as non-fungible tokens (NFTs). The contract provides a framework for creating, managing, and transferring crime records, ensuring transparency, security, and immutability.
+The Crime Records smart contract is a decentralized application built on the Base blockchain, designed to manage crime records as non-fungible tokens (NFTs). The contract provides a framework for creating, managing, and transferring crime records, ensuring transparency, security, and immutability.
 
 ### License
 The Crime Records smart contract is released under the MIT license.
@@ -48,13 +48,13 @@ The following event handlers are defined to capture relevant information emitted
 
 These event handlers create new entities with details such as owner, approved address, token ID, URI, and other relevant information, making it easier to query and analyze event data on the blockchain.
 
-# (Contract Address)[https://sepolia.basescan.org/address/0xd9da513797fd0e72105727cdffbae75f6b7dc2f0]
+# (Contract Address)[https://sepolia.basescan.org/address/0x08224d5346fe0f05dad0b3eed040b5c0f0da6d6d]
 
 
 # Smart Contract Documentation for Agreement
 
 ## Overview
-The Agreement smart contract is a decentralized application built on the Ethereum blockchain. It facilitates the creation, signing, and validation of legal agreements between parties. Each agreement is represented by a unique ID and contains information about the creator, content, and participants.
+The Agreement smart contract is a decentralized application built on the Base blockchain. It facilitates the creation, signing, and validation of legal agreements between parties. Each agreement is represented by a unique ID and contains information about the creator, content, and participants.
 
 ### License
 This contract is released under the MIT License.
@@ -86,7 +86,7 @@ The Agreement smart contract integrates with a subgraph to enable efficient quer
 ## Event Handlers (TypeScript)
 Event handlers are implemented to capture and store relevant information emitted by the Agreement contract events. These handlers create entities for each event type, capturing details such as agreement ID, creator, content, signer, and validation status.
 
-# Agreement (Contract Address)[https://sepolia.basescan.org/address/0x726c51fcac027ff7c9eaaf830f88daf12199ddc5]
+# Agreement (Contract Address)[https://sepolia.basescan.org/address/0x71B7d170E025CEDaeD65d5579330C865fe3633Ca]
 
 ## Conclusion
 This document has provided a comprehensive overview of both the Agreement and Crime Records smart contracts, highlighting their key components, functionalities, event handling mechanisms, and integration with a subgraph.
